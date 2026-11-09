@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: teamboard-api
+    runtime: node
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        sync: false
